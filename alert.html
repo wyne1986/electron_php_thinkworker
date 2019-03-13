@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>debug window</title>
+</head>
+<body>
+<div id="contents">
+</div>
+</body>
+</html>
+<script>
+const {ipcRenderer} = require('electron')
+ipcRenderer.on('alertwin-message',function(event, args){
+	var msg = document.createElement('div');
+	msg.style = 'color:blue;'
+	msg.innerHTML = args;
+	document.getElementById('contents').appendChild(msg);
+})
+ipcRenderer.on('alertwin-error',function(event, args){
+	var err = document.createElement('div');
+	err.style = 'color:red;';
+	err.innerHTML = args;
+	document.getElementById('contents').appendChild(err);
+})
+</script>
+</script>
