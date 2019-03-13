@@ -1,6 +1,10 @@
-# auto refresh page DevTools, develop thinkworker php server
+## auto refresh page DevTools, develop thinkworker php server
 
-# 自动刷新页面开发工具,开发thinkworker的php服务端工具
+## 自动刷新页面开发工具,开发thinkworker的php服务端工具
+
+## also you can use this to develop a php desktop software
+
+## 当然，你也可以用这个来开发PHP的web桌面应用
 
 ## 使用的配置为 used softwar:
 
@@ -27,3 +31,5 @@
 
 * 执行electron.exe，你就可以在编辑thinkworker项目的同时，在electron里即时的看到你项目页面所发生的变化。
 
+
+![image](https://github.com/wyne1986/electron_php_thinkworker/raw/master/test.gif)
