@@ -21,15 +21,28 @@ function createWindow () {
 	  frame: true,
 	  width: 800,
 	  height: 600,
-	  resizable: false
+	  resizable: true
   });
   
   win.setFullScreen(false);
+
+  if(debug>0){
+	  win.webContents.on('did-fail-load',function(event,errorCode){
+	    if(debug>1){
+		  awin.webContents.send('alertwin-error',errorCode);
+	    }	  
+		if(errorCode!=0){
+			setTimeout(function(){
+				win.reload();
+			},1000);
+		}
+	});
+  }
     
   //press F8 to toggle fullscreen off/on
   globalShortcut.register('F8', () => {
         win.isFullScreen?win.setFullScreen(false):win.setFullScreen(true);
-  });  
+  });
   
   //press F9 to restart php server
   globalShortcut.register('F9', () => {
@@ -136,11 +149,8 @@ function debuger(){
 		  awin = null
 		})
 	  }
-		
-	  setTimeout(function(){
-		startServer();
-		win.reload();
-	  },1000);
+
+	  startServer();
 		  
 	//thinkworker file watcher, when file changed, restart php server
 	let lastUpdateTime = 0;
