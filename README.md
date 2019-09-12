@@ -8,7 +8,7 @@
 
 ## 使用的配置为 used softwar:
 
-* electron1.8.7
+* electron1.8.7 > download:https://npm.taobao.org/mirrors/electron/1.8.7/
 
 * php7+
 
